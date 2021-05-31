@@ -21,6 +21,13 @@
     </style>
 </head>
 <body>
+    <script>     
+        let screen = document.querySelector('#screen-result');
+        function getData(ref){ let value = ref.value; screen.value += value;}
+        function clean(){screen.value = '';}
+        function calculate() { try { screen.value = eval(screen.value) } catch (error) { screen.value = 'Error'
+        setTimeout(() => {clean();}, 750);}}
+    </script>
     <div class="content-body">
         <div class="content-calculator">
             <div class="screen"><input type="text" placeholder="0" disabled id="screen-result"></div>
@@ -42,13 +49,5 @@
             <div class="btn-cal btn-cal-radius btn-equal"><input type="button" value="=" class="equal" onclick="calculate()"></div>
         </div>
     </div>
-
-    <script>     
-        let screen = document.querySelector('#screen-result');
-        function getData(ref){ let value = ref.value; screen.value += value;}
-        function clean(){screen.value = '';}
-        function calculate() { try { screen.value = eval(screen.value) } catch (error) { screen.value = 'Error'
-        setTimeout(() => {clean();}, 750);}}
-    </script>
 </body>
 </html>
